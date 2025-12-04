@@ -93,7 +93,6 @@ $pe1 = array();
 $pe1['nombre'] = "DISEÑO Y PROGRAMACION WEB";
 $pe1['modulos'] = [$m1, $m2, $m3];
 
-
 $pe2 = array();
 $pe1['nombre'] = "ENFERMERIA TECNICA";
 $pe1['modulos'] = [];
@@ -101,10 +100,10 @@ $pe3 = array();
 $pe1['nombre'] = "INDUSTRIA DE ALIMENTOS Y BEBIDAS";
 $pe1['modulos'] = [];
 $pe4 = array();
-$pe1['nombre'] = "PRODUCCION AGROPECUARIA";
+$pe1['nombre'] = "MECATRONICA AUTOMOTRIZ";
 $pe1['modulos'] = [];
 $pe5 = array();
-$pe1['nombre'] = "MECATRONICA AUTOMOTRIZ";
+$pe1['nombre'] = "PRODUCCION AGROPECUARIA";
 $pe1['modulos'] = [];
 
 $ies['nombre'] = "IES Público HUANTA";
@@ -117,14 +116,7 @@ $et1=$xml->createElement('ies');
 $xml->appendChild($et1);
 
 
-$nombre_ies = $xml->createElement("nombre", $ies['nombre']);
-$programas_ies = $xml->createElement("programas_estudio");
-foreach ($ies["programas_estudio"]as $indice => $PEs) {
-    $num_pe = $xml->createEletemt("pe".$indice+1);
-    $nombre_pe = $xml->createElement("nombre", $PEs['nombre']);
-    $num_pe->appendChild($nombre_pe);
-    $programas_ies->appendChild($num_pe);
-}
+
 
 $archivo = "ies.xml";
 $xml->save($archivo);
